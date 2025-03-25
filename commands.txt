@@ -1,0 +1,7 @@
+// by default operator > works with STDOUT stream,
+// but it can be specified manually,
+// by adding 1 before operator >
+ls -al 1> stdout-file
+
+// 2 before operator > will set stream to STDERR
+ls -al 2> stderr-file
