@@ -5,3 +5,31 @@ ls -al 1> stdout-file
 
 // 2 before operator > will set stream to STDERR
 ls -al 2> stderr-file
+
+// will create a new file,
+// if exist, override;
+// alternative to the command (touch new-file.ext)
+> new-file.ext
+
+// output the first part of a file,
+// by default: 10 lines
+head ./my-file.txt
+
+// output the last part of a file,
+// by default: 10 lines
+tail ./my-file.txt
+// flag -f doesn't close a file and watch for a new lines
+tail -f ./my-file.txt
+
+// grep (global regex print)
+// output all lines which match myRegEx
+grep myRegEx ./my-file.txt
+
+// 3 files store info about linux users
+// (to create backup of all users, need to copy these files):
+// all users
+/etc/passwd
+// all groups
+/etc/group
+// all users passwords
+/etc/shadow
