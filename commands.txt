@@ -33,3 +33,25 @@ grep myRegEx ./my-file.txt
 /etc/group
 // all users passwords
 /etc/shadow
+
+// change permissions
+chmod 755 ./file.txt
+// is equal to:
+chmod u=rwx,g=rx,o=rx ./file.txt
+// or:
+chmod u+rwx,g+rx,o+rx ./file.txt
+
+// u - user
+// g - group
+// o - other (not owner and users are not in the group)
+// a - all (owner and all users)
+
+// to strip some permissions
+chmod o-wx ./file.txt
+// is equal to:
+chmod 754 ./file.txt
+
+// r (read) = 4 (binary: 100)
+// w (write) = 2 (binary: 010)
+// x (execute) = 1 (binary: 001)
+// "x" gives access to enter a directory
