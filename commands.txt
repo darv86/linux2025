@@ -55,3 +55,6 @@ chmod 754 ./file.txt
 // w (write) = 2 (binary: 010)
 // x (execute) = 1 (binary: 001)
 // "x" gives access to enter a directory
+
+// statistic for a file or directory
+stat /path/to/file.txt
