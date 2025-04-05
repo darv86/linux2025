@@ -58,3 +58,17 @@ chmod 754 ./file.txt
 
 // statistic for a file or directory
 stat /path/to/file.txt
+
+// to create new group
+sudo groupadd groupName
+
+// to add user to a group;
+// flag 'a' appends user to a group
+// can't be used as a stand along flag,
+// must be combined with another (e.g. with flag 'G');
+// flag 'G' adds user to a group,
+// but without flag 'a', removes from others groups
+sudo usermod -aG groupName userName
+
+// there is a file, where all groups and users migrations can be set up
+/etc/sudoers
