@@ -93,3 +93,9 @@ hash
 type chmod
 // will show the built-in type
 type cd
+
+// task (command) scheduler -
+// global file /etc/crontab
+// local file (sudo) /var/spoon/cron/crontabs/username
+// command to edit local crontab file via terminal and without sudo:
+crontab -e
