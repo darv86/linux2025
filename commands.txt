@@ -72,3 +72,24 @@ sudo usermod -aG groupName userName
 
 // there is a file, where all groups and users migrations can be set up
 /etc/sudoers
+
+// when run a command/app (e.g. pwd -> /bin/pwd),
+// bash looks for all paths from left to right,
+// where this command can be;
+// will execute the first found app;
+// all these paths are inside the env variable $PATH
+
+// when bash has found a command, bash will hash the path of this command
+// and is going to use it while session;
+// so if while session this path changes,
+// bash will not go through all paths ($PATH) again;
+// thats why hash needs to be cleaned:
+hash -r
+// show hash table:
+hash
+
+// will show type of a command or path to it, if not built-in:
+// will shot the path
+type chmod
+// will show the built-in type
+type cd
