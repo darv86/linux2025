@@ -99,3 +99,24 @@ type cd
 // local file (sudo) /var/spoon/cron/crontabs/username
 // command to edit local crontab file via terminal and without sudo:
 crontab -e
+
+// tr (translate/transform) can change one string to another;
+// will change all spaces to 0:
+tail -n 2 commands.txt | tr [:space:] 0
+// or can delete substring (e.g. //) from string:
+tail -n 2 commands.txt | tr -d //
+
+// sed another command for text filtering and transformation
+tail -n 2 commands.txt | sed 's/\/\///g'
+// or the same, but using another delimiter (/ -> |),
+// is this case, less confusion and no need to use escape symbol (\):
+tail -n 2 commands.txt | sed 's|//||g'
+
+// to search inside apt by a keyword:
+apt search chrome
+// to show package download source:
+apt policy chrome
+
+// creates temp file (in ram, not disk) in read-only mode,
+// with an output of a command:
+vim <(apt search chrome)
