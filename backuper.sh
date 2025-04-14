@@ -40,6 +40,32 @@ echo -e "Source to archive: $srcPath"
 echo -e "Destination: $destPath"
 echo 'Backuper done'
 
+# bash designed to work with string,
+# thats why c=$a+$b just will concat to strings
+# a=2; b=3
+# there are a few variants to do correct math:
+# c=$[$a + $b + 2 + 5]
+# does the same
+# c=$(( $a + $b + 2 + 5 ))
+# does the same
+# let "c = a + b + 2 + 5"
+# echo $c
+
+# $* - all arguments
+# * - also just wild card can be use (instead of $*), stores all files near this script
+# arg - identifier (variable) with an argument itself (value was passed)
+# for arg in $*
+# do
+# 	# $0 - name of the command (./backuper.sh)
+# 	echo $0
+# 	echo $arg
+# 	# $# - number of arguments
+# 	echo $#
+# done
+# another syntax to make for loop
+# for (( i=1; i<4; i++ ))
+# do echo $i; done
+
 exit 0
 
 # File Tests
