@@ -120,3 +120,22 @@ apt policy chrome
 // creates temp file (in ram, not disk) in read-only mode,
 // with an output of a command:
 vim <(apt search chrome)
+
+// debian based distro install:
+// 1. use gparted (partition editor app, preinstalled while os installation wizard)
+//    to format EFI partition (fat32) and os partition (ext4)
+// 2. to check disk where is windows EFI partition path, use sudo fdisk -l
+// 3. before installation, should use command "parted" in terminal,
+//    to turn off flag "boo" from windows EFI partition:
+//    "parted /dev/nvme0n1"
+//    then "p" to print list of all partitions and check id for windows EFI partition
+//    then turn off "boot" flag:
+//    "set 1 boot off"
+// 4. make distro install
+// 5. need to turn "boot" flag on:
+//    "set 1 boot on"
+// 6. to configure grub menu:
+//    "sudo grub-update"
+// 7. add string "GRUB_DISABLE_OSP_PROBER=off" to grub config "sudo vim /etc/default/grub"
+// 8. to update new grub settings:
+//    "sudo grub-update"

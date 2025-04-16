@@ -1,3 +1,14 @@
 {
-	"cSpell.words": ["crontabs", "czvf", "librewolf", "nullglob", "usermod"]
+	"cSpell.words": [
+		"crontabs",
+		"czvf",
+		"distro",
+		"fdisk",
+		"gparted",
+		"librewolf",
+		"nullglob",
+		"nvme",
+		"usermod",
+		"zorin"
+	]
 }
