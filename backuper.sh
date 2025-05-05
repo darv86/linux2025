@@ -2,7 +2,34 @@
 
 echo 'Backuper is running...'
 
-# tar -czvf /d/backups/archive.tar.gz -C ~/AppData/Roaming/librewolf/profiles/*.default-default/ ./
+flags="czvf"
+flagsCustom=""
+while getopts "cxzvf" option; do
+    case $option in
+		c|x|z|v|f) flagsCustom=$flagsCustom$option;;
+    esac
+done
+if [ -n "$flagsCustom" ]; then flags=$flagsCustom; fi
+
+# OPTIND - built-in variable (init value: 1);
+#          getopts increments OPTIND while looping over optional arguments
+#          so when getopts is done,
+#          OPTIND will have index of the 1st non-optional argument
+
+# array creation using brackets ();
+# "$@" expands every param as an array element;
+# quotes "" keeps params non-split, which have spaces inside
+# (e.g. "my param", not "my" "param")
+original_args=("$@")
+echo ${original_args[$(($OPTIND-1+1))]}
+# array length number
+echo ${#original_args[@]}
+# array of each element index
+echo ${!original_args[@]}
+# take element by index
+echo ${original_args[0]}
+# // to take 2 elements from 1st index
+echo ${original_args[@]:1:2}
 
 # $() syntax allows to have result of the command (pgrep);
 # -x flag makes strict search according to the word (librewolf)
@@ -51,6 +78,8 @@ echo 'Backuper done'
 # let "c = a + b + 2 + 5"
 # echo $c
 
+# $* - similar to `$@` but treats all arguments
+#      as a single string when quoted
 # $* - all arguments
 # * - also just wild card can be use (instead of $*), stores all files near this script
 # arg - identifier (variable) with an argument itself (value was passed)
